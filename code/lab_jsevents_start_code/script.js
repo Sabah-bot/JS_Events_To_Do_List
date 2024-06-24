@@ -1,36 +1,48 @@
-const textInput = document.querySelector("#todo-form");
-const userInput = document.querySelector("#new-todo");
-const button = document.querySelector("#enter");
-const list = document.querySelector("#list");
-const deletebutton = document.querySelector("#delete");
+const toDoForm = document.querySelector("#todo-form");
+const textInput = document.querySelector("#new-todo");
+const toDoList = document.querySelector("#list");
 const dateButton = document.querySelector("#show-date")
+const dateTime = document.querySelector("#date-time");
 
+// MVP: `Enter` button +`delete` button + allows a user to delete an item from the list 
 
-// `Enter` button +`delete` button + allows a user to delete an item from the list 
-textInput.addEventListener("submit", (event)=> {
-console.log(event);
-event.preventDefault();
-const newListItem = document.createElement('li');
-const deletebutton = document.createElement("button");
-const buttonText = document.createElement("DELETE");
-newListItem.innerText = event.target['new-todo'].value;      
-deletebutton.appendChild(buttonText);
+textInput.addEventListener("input", (event) => {
+    console.log(evt);
+}); 
 
-list.appendChild(newListItem);  
-list.appendChild(deletebutton);
+toDoForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log(evt.target["new-todo"].value);
+    const newListItem = document.createElement("li");
+    const newDeleteButton = document.createElement("button");
+    const buttonText = document.createTextNode("DELETE");
+    newListItem.innerText = event.target["new-todo"].value;
+    newDeleteButton.appendChild(buttonText);
+    toDoList.appendChild(newListItem);
+    newListItem.appendChild(newDeleteButton);
 
-deletebutton.addEventListener("click",(event)=> {
-    list.removeChild(list.lastChild); 
+    newDeleteButton.addEventListener("click", () => {
+        newListItem.remove();
+    });
 });
 
-});
 
-
-// Create a `Show Date` button +added directly to `index.html`. (hint: `Date()` returns today's date and time) 
+// MVP: Create a `Show Date` button +added directly to `index.html`. (hint: `Date()` returns today's date and time) 
 
 dateButton.addEventListener("click", () => {
-    const currentDate = new Date();
-    currentDate.innerText = currentDate;
-    console.log(currentDate)
+    const currentDateTime = new Date();
+    dateTime.innerText = currentDateTime; 
 })
+    
+
+// Extensions -- attempted (does not work!)
+
+    newListItem.addEventListener("click", () => {
+        newListItem.classList.toggle("completed");
+    
+
+    });
+
+
+
 
