@@ -7,12 +7,12 @@ const dateTime = document.querySelector("#date-time");
 // MVP: `Enter` button +`delete` button + allows a user to delete an item from the list 
 
 textInput.addEventListener("input", (event) => {
-    console.log(evt);
+    console.log(event);
 }); 
 
 toDoForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    console.log(evt.target["new-todo"].value);
+    console.log(event.target["new-todo"].value);
     const newListItem = document.createElement("li");
     const newDeleteButton = document.createElement("button");
     const buttonText = document.createTextNode("DELETE");
@@ -37,11 +37,11 @@ dateButton.addEventListener("click", () => {
 
 // Extensions -- attempted (does not work!)
 
-    newListItem.addEventListener("click", () => {
-        newListItem.classList.toggle("completed");
+    // newListItem.addEventListener("click", () => {
+    //     newListItem.classList.toggle("completed");
     
 
-    });
+    // });
 
 
 
