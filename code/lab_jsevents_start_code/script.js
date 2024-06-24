@@ -28,7 +28,9 @@ deletebutton.addEventListener("click",(event)=> {
 
 // Create a `Show Date` button +added directly to `index.html`. (hint: `Date()` returns today's date and time) 
 
-// dateButton.addEventListener("click", () => {
-
-// })
+dateButton.addEventListener("click", () => {
+    const currentDate = new Date();
+    currentDate.innerText = currentDate;
+    console.log(currentDate)
+})
 
