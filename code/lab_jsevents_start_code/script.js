@@ -37,10 +37,8 @@ dateButton.addEventListener("click", () => {
 
 // Extensions -- attempted (does not work!)
 
-    // newListItem.addEventListener("click", () => {
-    //     newListItem.classList.toggle("completed");
-    
-
+// newListItem.addEventListener("click", () => {
+//     newListItem.classList.toggle("completed");
     // });
 
 
